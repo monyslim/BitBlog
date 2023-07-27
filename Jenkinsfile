@@ -14,6 +14,7 @@ pipeline{
                     cd /var/html
                     sudo git clone https://github.com/monyslim/bitblog.git . 
                     sudo docker build -t bitblog:1 .
+                    docker run -d -p 80:80 bitblog:1
                     <<EOF
                     """
                
