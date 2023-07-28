@@ -6,7 +6,7 @@ pipeline{
            steps{
                 
                sh  """
-                    sudo ssh -i /var/lib/jenkins/bitblog.pem -t -o StrictHostKeyChecking=no ubuntu@ec2-18-133-29-174.eu-west-2.compute.amazonaws.com << EOF
+                    sudo ssh -i /var/lib/jenkins/bitblog.pem -t -o StrictHostKeyChecking=no ubuntu@ec2-18-134-16-221.eu-west-2.compute.amazonaws.com << EOF
                     cd /var
                     sudo rm -rf html
                     sudo mkdir html
