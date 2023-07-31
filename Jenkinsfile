@@ -6,7 +6,7 @@ pipeline{
            steps{
                 
                sh  """
-                    sudo ssh -i /var/lib/jenkins/bitblog.pem -t -o StrictHostKeyChecking=no ubuntu@ec2-18-134-16-221.eu-west-2.compute.amazonaws.com << EOF
+                    sudo ssh -i /var/lib/jenkins/bitblog.pem -t -o StrictHostKeyChecking=no ubuntu@ec2-3-8-180-179.eu-west-2.compute.amazonaws.com << EOF
                     cd /var
                     sudo rm -rf html
                     sudo mkdir html
@@ -16,7 +16,6 @@ pipeline{
                     sudo docker build -t bitblog:1 .
                     sudo docker run -d -p 80:80 bitblog:1
                     sudo docker stop b4aad5eecb1f
-                    sudo docker rm b4aad5eecb1f
                     <<EOF
                     """
                
